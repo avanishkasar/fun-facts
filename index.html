@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AP Shah Institute of Technology - Fun Facts</title>
+<style>
+body {
+  font-family: sans-serif;
+  background-image: url('https://wallpaperaccess.com/full/2349341.jpg'); /* Replace with your galaxy image URL */
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0; /* Remove default body margins */
+}
+
+#factContainer {
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  color: white;
+}
+
+button {
+  background-color: yellow; 
+  border: none;
+  color: black;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 50%; /* Make the button circular */
+}
+</style>
+</head>
+<body>
+
+<div id="factContainer">
+  <p id="factDisplay">Click the button below to get a fun fact!</p>
+  <button onclick="newFact()">New Fact</button>
+</div>
+
+<script>
+function getRandomElement(array) {
+  return array[Math.floor(Math.random() * array.length)];
+}
+
+function generateRandomFact() {
+  const campusSizes = ["15", "20", "25", "30"]; 
+  const locations = ["Mumbai", "Delhi", "Bangalore", "Chennai"]; 
+  const foundingYears = ["1998", "2001", "2005", "2008"];
+  const foundingTeams = ["experienced educators", "industry professionals", "philanthropists"];
+  const streams = ["Computer Science", "Mechanical Engineering", "Electronics and Telecommunication", "Information Technology", "Biotechnology"]; 
+
+  const factTemplates = [
+    "AP Shah Institute of Technology boasts a sprawling campus of " + getRandomElement(campusSizes) + " acres.",
+    "Located in the vibrant city of " + getRandomElement(locations) + ", the institute offers a stimulating learning environment.",
+    "Established in " + getRandomElement(foundingYears) + " by a team of " + getRandomElement(foundingTeams) + ", AP Shah Institute has a rich legacy.",
+    "Students can choose from a diverse range of streams, including " + getRandomElement(streams) + ", " + getRandomElement(streams) + ", and " + getRandomElement(streams) + "."
+  ];
+
+  return getRandomElement(factTemplates);
+}
+
+function newFact() {
+  document.getElementById("factDisplay").innerHTML = generateRandomFact();
+}
+</script>
+
+</body>
+</html>
+
